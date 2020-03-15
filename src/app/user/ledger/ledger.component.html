@@ -1,0 +1,32 @@
+<div class="btn-group d-flex" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary btnLeft" (click)="btnLeft(e)">
+        <i class="fa fa-arrow-left"></i>
+    </button>
+    <button type="button" class="btn btn-secondary">
+        <td>{{ reportDate | date: 'dd-MM-yyyy '}}</td>
+
+    </button>
+    <button type="button" class="btn btn-primary btnRight" (click)="btnRight(e)">
+        <i class="fa fa-arrow-right"></i>
+    </button>
+</div>
+
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Remark</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="ledgerList$ | async as ledgers">
+            <tr *ngFor="let ledger of ledgers">
+                <th scope="row">1</th>
+                <td>{{ledger.amount}}</td>
+                <td>{{ledger.remark}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

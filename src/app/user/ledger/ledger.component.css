@@ -1,0 +1,6 @@
+.btn-group .btn{
+    border-radius: 0;
+}
+.btnLeft,.btnRight{
+    width: 100px !important;
+}

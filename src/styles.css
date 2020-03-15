@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.content{
+    padding-bottom: 10px;
+}
+.app-title {
+  color: #009688 !important;
+  text-decoration: underline;
+  margin: 10px 0;
+}
