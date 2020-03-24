@@ -11,8 +11,7 @@ import { LedgerComponent } from './ledger/ledger.component';
   declarations: [ListingsComponent, LedgerComponent],
   imports: [
     CommonModule,
-    UserRoutingModule,
-
+    UserRoutingModule
   ]
 })
 export class UserModule { }

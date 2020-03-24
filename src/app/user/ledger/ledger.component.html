@@ -3,7 +3,7 @@
         <i class="fa fa-arrow-left"></i>
     </button>
     <button type="button" class="btn btn-secondary">
-        <td>{{ reportDate | date: 'dd-MM-yyyy '}}</td>
+        {{ reportDate | date: 'dd-MM-yyyy '}}
 
     </button>
     <button type="button" class="btn btn-primary btnRight" (click)="btnRight(e)">
@@ -12,21 +12,44 @@
 </div>
 
 
-<div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Remark</th>
-            </tr>
-        </thead>
-        <tbody *ngIf="ledgerList$ | async as ledgers">
-            <tr *ngFor="let ledger of ledgers">
-                <th scope="row">1</th>
-                <td>{{ledger.amount}}</td>
-                <td>{{ledger.remark}}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-md-6">
+        <span class="mat-display-1 text-capitalize">Income</span>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Remark</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="ledgerList$ | async as ledgers">
+                <tr *ngFor="let ledger of ledgers;let ndx = index">
+                    <th>{{ndx + 1}}</th>
+                    <td>{{ledger.remark}}</td>
+                    <td>{{ledger.amount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        
+        <span class="mat-display-1 text-capitalize">Expenses</span>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Remark</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="ledgerList$ | async as ledgers">
+                <tr *ngFor="let ledger of ledgers;let ndx = index">
+                    <th>{{ndx + 1}}</th>
+                    <td>{{ledger.remark}}</td>
+                    <td>{{ledger.amount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
