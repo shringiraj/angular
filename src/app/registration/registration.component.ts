@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     this.titleService.setTitle("Registration");
   }
-  submit(formData) {
+  submit() {
     console.log(this.userModel)
     this.btnStatus = true;
     this.userService.registration(this.userModel).subscribe(res => {
